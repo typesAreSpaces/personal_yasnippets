@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: open (and automatically close) parenthesis
-# key: (
-# condition: 'auto
-# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
-# --
-($0)
