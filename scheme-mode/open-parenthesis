@@ -1,9 +1,7 @@
 # -*- mode: snippet -*-
-# name: (cond [... ...]...)
-# key: ;cond
+# name: open (and automatically close) parenthesis
+# key: (
 # condition: 'auto
 # expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
-(cond
-  (${1:predicate} ${2:expr})
-  $0)
+($0)

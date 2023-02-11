@@ -1,9 +1,12 @@
 # -*- mode: snippet -*-
-# name: (cond [... ...]...)
-# key: ;cond
+# name: new test cases
+# key: ;exercise
 # condition: 'auto
 # expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
-(cond
-  (${1:predicate} ${2:expr})
-  $0)
+("${1:Exercise name}" .
+  (
+    $2
+  )
+)
+$0

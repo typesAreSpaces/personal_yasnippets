@@ -2,5 +2,7 @@
 # name: (match ... [... ...]...)
 # key: ;match
 # condition: 'auto
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
-(match ${1:expression} [${2:clause} $0])
+(match ${1:expression}
+  (${2:clause} $0))

@@ -2,6 +2,8 @@
 # name: (if ... ... ...)
 # key: ;if
 # condition: 'auto
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
-(if ${1:(${2:predicate})}
-    $0)
+(if ${1:predicate}
+  ${2:then}
+  ${3:else})

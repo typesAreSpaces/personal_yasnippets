@@ -2,5 +2,8 @@
 # name: (define ... ...)
 # key: ;define
 # condition: 'auto
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
-(define ${1:(${2:name} ${3:arguments})} $0)
+(define ${1:name}
+  (lambda ${2:(${3:arguments})})
+    $0)

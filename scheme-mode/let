@@ -2,5 +2,7 @@
 # name: (let... ([... ...]...) ...)
 # key: ;let
 # condition: 'auto
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
-(let$1 ([${2:name} ${3:expression}]$4) $0)
+(${1:$$(yas-choose-value '("let" "let*" "letrec"))}
+  ((${2:name} ${3:expression})$4) $0)
