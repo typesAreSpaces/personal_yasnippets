@@ -5,5 +5,5 @@
 # expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
 (cond
-  (${1:predicate} ${2:expr})
+  (${1:predicate} ${2:predicate})
   $0)
