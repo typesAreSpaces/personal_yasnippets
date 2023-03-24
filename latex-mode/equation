@@ -3,8 +3,8 @@
 # key: ;eq
 # condition: 'auto
 # --
-\begin{equation*} ${2:\label\{${3:eq}\}}
+\begin{${1:$$(yas-choose-value '("equation*" "equation"))}} ${2:\label\{eq:${3:default}\}}
 	${4:\begin\{split\}
 		$5
 	\end\{split\}}$0
-\end{equation*}
+\end{$1}
