@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: print
-# key: ;pr
+# key: ;print
 # condition: 'auto
 # --
 print $0
