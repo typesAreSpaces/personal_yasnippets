@@ -4,5 +4,6 @@
 # condition: 'auto
 # --
 \begin{conjecture}
-	$0
+  \th\label{`(reftex-label nil 'dont-insert)`}
+  $0
 \end{conjecture}

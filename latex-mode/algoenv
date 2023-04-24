@@ -6,7 +6,7 @@
 \\begin{algorithm}${1:[H]}
   \\DontPrintSemicolon
   ${2:\\caption{${3:name: description}}}
-  ${4:\\label{${5:label}}}
+  \label{${4:"waiting for reftex-label call..."$(unless yas-modified-p (reftex-label nil 'dont-insert))}}
   ${6:\\kwInput\{${7:input}\}
   \\kwOutput\{${8:output}\}
   \\kwRequires\{${9:requires}\}

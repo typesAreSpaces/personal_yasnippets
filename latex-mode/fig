@@ -7,5 +7,5 @@
 	\centering
 	\includegraphics[width=${3:0.8}\textwidth]{./figures/$2}
 	\caption{$4}
-	\label{fig:$2}
+	\label{`(reftex-label nil 'dont-insert)`}
 \end{figure}

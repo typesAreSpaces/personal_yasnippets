@@ -4,5 +4,6 @@
 # condition: 'auto
 # --
 \begin{proposition}
-	$0
+  \th\label{`(reftex-label nil 'dont-insert)`}
+  $0
 \end{proposition}

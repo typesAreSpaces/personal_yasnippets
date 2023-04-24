@@ -3,6 +3,7 @@
 # key: ;thm
 # condition: 'auto
 # --
-\begin{theorem}
-	$0
+\begin{theorem}${1:[${2:cite?}]}
+  \th\label{`(reftex-label nil 'dont-insert)`}
+  $0
 \end{theorem}

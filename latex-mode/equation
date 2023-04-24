@@ -3,7 +3,8 @@
 # key: ;eq
 # condition: 'auto
 # --
-\begin{${1:$$(yas-choose-value '("equation*" "equation"))}} ${2:\label\{eq:${3:default}\}}
+\begin{${1:$$(yas-choose-value '("equation*" "equation"))}} 
+        \label{`(reftex-label nil 'dont-insert)`}
 	${4:\begin\{split\}
 		$5
 	\end\{split\}}$0
