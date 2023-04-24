@@ -3,7 +3,7 @@
 # key: ;cor
 # condition: 'auto
 # --
-\begin{corollary}
+\begin{corollary}${1:[${2:cite?}]}
   \th\label{`(reftex-label nil 'dont-insert)`}
   $0
 \end{corollary}
