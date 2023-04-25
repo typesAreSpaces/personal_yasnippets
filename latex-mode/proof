@@ -4,6 +4,5 @@
 # condition: 'auto
 # --
 \begin{${1:$$(yas-choose-value '("proof" "prooftree"))}}${2:[Proof of ${3:ref?}]}
-  \th\label{`(reftex-label nil 'dont-insert)`}
   $0
 \end{$1}
