@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: set element
-# key: ;in
+# key: ;ins
 # condition: 'auto
 # --
 \\in $0
