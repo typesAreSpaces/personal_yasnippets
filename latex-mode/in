@@ -3,4 +3,4 @@
 # key: ;ins
 # condition: 'auto
 # --
-\\in \\set{$1${2: \mid $3}}$0
+\\in ${1: \\set\{$2${3: \mid $4}\} } $0
