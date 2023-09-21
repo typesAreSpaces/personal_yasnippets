@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: New Item
+# name: New command
 # key: ;ncmd
 # condition: 'auto
 # --
