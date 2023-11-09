@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: Email template to review homework for CS 561
-# key: ;review
+# name: Email template to email regrade request for CS 561
+# key: ;regrade
 # condition: 'auto
 # --
 Hello $1,
