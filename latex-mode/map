@@ -8,4 +8,4 @@ ${1:$$(when
 	(substring
 		(mapconcat
 			(lambda (x) (concat yas-text "\{" x "\} "))
-			(split-string (car kill-ring) " ")) 0 -1))}
+			(split-string (car kill-ring) " ") "") 0 -1))}
