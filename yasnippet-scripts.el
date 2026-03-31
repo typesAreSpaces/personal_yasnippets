@@ -64,7 +64,8 @@
       (yasnippet/find-char-position (cdr x) y (+ 1 n)))))
 
 (defun yasnippet/parent-file ()
-  (let* ((file_name (substring (buffer-name) 0 -4))
+  (let* ((pos (string-match "\\." (buffer-name)))
+	 (file_name (substring (buffer-name) 0 pos))
 	 (grep_command (concat "grep -nr input{" file_name "}"))
 	 (grep_output (shell-command-to-string grep_command))
 	 (position (yasnippet/find-char-position (string-to-list grep_output) 58 0)))
