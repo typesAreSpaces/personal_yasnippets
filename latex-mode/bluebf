@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Blue
+# key: ;bbf
+# condition: 'auto
+# --
+\bluebf{$1}$0

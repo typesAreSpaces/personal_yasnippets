@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: Footer
+# key: ;foot
+# condition: 'auto
+# --
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main.tex"
+%%% End:
