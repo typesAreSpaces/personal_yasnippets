@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Bra notation
+# key: ;bb
+# condition: 'auto
+# --
+\\bra{$1}$0

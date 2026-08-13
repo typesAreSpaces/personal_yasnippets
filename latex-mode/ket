@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Ket notation
+# key: ;kk
+# condition: 'auto
+# --
+\\ket{$1}$0
