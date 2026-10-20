@@ -1,7 +1,8 @@
 ;; -*- lexical-binding: t; -*-
 
 (defun my-yas-try-expanding-auto-snippets ()
-    (when yas-minor-mode
+    (when (and yas-minor-mode
+               (yas--require-template-specific-condition-p))
       (let ((yas-buffer-local-condition ''(require-snippet-condition . auto)))
         (yas-expand))))
 
