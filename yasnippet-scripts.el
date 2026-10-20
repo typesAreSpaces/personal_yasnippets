@@ -74,6 +74,7 @@
 (defun yasnippet/input_aux (name title header)
   (let ((file-name (concat name ".tex")))
     (unless (file-exists-p file-name)
+      (make-directory (file-name-directory (expand-file-name file-name)) t)
       (with-temp-file file-name
         (unless (string-empty-p header)
           (insert "\\" header "{" title "}\n"))))
