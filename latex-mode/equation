@@ -3,8 +3,8 @@
 # key: ;eq
 # condition: 'auto
 # --
-\begin{${1:$$(yas-choose-value '("equation*" "equation"))}} 
-        \label{`(reftex-label nil 'dont-insert)`}
+\begin{${1:$$(yas-choose-value '("equation*" "equation"))}}
+${2:$$(if (equal (yas-field-value 1) "equation") (if yas-modified-p yas-text (format "\\\\label\{%s\}" (reftex-label nil 'dont-insert))) "")}
 	${4:\begin\{split\}
 		$5
 	\end\{split\}}$0

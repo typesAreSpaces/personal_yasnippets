@@ -1,5 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
+(require 'cl-lib)
+
 (defun my-yas-try-expanding-auto-snippets ()
     (when (and yas-minor-mode
                (yas--require-template-specific-condition-p))
@@ -105,11 +107,62 @@
     (if (not (equal file "")) (find-file file))))
 
 (defun yasnippet/count-delims-table (x n)
-  (if (null x) n
-    (let ((curr (car x)))
-      (if (or (equal curr 99) (equal curr 108) (equal curr 114))
-	  (yasnippet/count-delims-table (cdr x) (+ 1 n))
-	(yasnippet/count-delims-table (cdr x) n)))))
+  "Count columns in preamble X, adding N.
+X may be a string or a list of characters.  Handle literal repetitions,
+width columns, and formatting groups without counting their contents.
+Custom single-letter column types count as one; TeX macros are not expanded."
+  (let* ((spec (if (stringp x) x (concat x)))
+         (pos 0)
+         (len (length spec))
+         (count n))
+    (cl-labels
+        ((skip-space ()
+           (while (and (< pos len) (memq (aref spec pos) '(?\s ?\t ?\n ?\r)))
+             (setq pos (1+ pos))))
+         (read-group ()
+           (skip-space)
+           (when (and (< pos len) (eq (aref spec pos) ?\{))
+             (setq pos (1+ pos))
+             (let ((start pos)
+                   (depth 1))
+               (while (and (< pos len) (> depth 0))
+                 (let ((char (aref spec pos)))
+                   (setq pos (1+ pos))
+                   (cond
+                    ((eq char ?\\) (setq pos (min len (1+ pos))))
+                    ((eq char ?\{) (setq depth (1+ depth)))
+                    ((eq char ?\}) (setq depth (1- depth))))))
+               (when (= depth 0)
+                 (substring spec start (1- pos)))))))
+      (while (< pos len)
+        (let ((char (aref spec pos)))
+          (setq pos (1+ pos))
+          (cond
+           ((eq char ?*)
+            (let ((times (read-group))
+                  (columns (read-group)))
+              (when (and times columns
+                         (string-match-p "^[ \t\n\r]*[0-9]+[ \t\n\r]*$" times))
+                (setq count (+ count (* (string-to-number times)
+                                        (yasnippet/count-delims-table columns 0)))))))
+           ((memq char '(?> ?< ?@ ?!)) (read-group))
+           ((memq char '(?p ?m ?b))
+            (setq count (1+ count))
+            (read-group))
+           ((memq char '(?w ?W))
+            (setq count (1+ count))
+            (read-group)
+            (read-group))
+           ((eq char ?\{)
+            (setq pos (1- pos))
+            (read-group))
+           ((eq char ?\\)
+            (while (and (< pos len)
+                        (string-match-p "[[:alpha:]@]" (char-to-string (aref spec pos))))
+              (setq pos (1+ pos))))
+           ((string-match-p "[[:alpha:]]" (char-to-string char))
+            (setq count (1+ count)))))))
+    count))
 
 ;; function to return first name of email recipients
 ;; used by yasnippet
