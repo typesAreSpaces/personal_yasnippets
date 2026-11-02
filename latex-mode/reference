@@ -3,4 +3,4 @@
 # key: ;reference
 # condition: 'auto
 # --
-\\ref{${1:$$(evil-paste-before 1)}} $0
+\\ref{${1:`(or (ignore-errors (current-kill 0)) "")`}} $0

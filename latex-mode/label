@@ -3,4 +3,4 @@
 # key: ;label
 # condition: 'auto
 # --
-\\label{${1:$$(evil-paste-before 1)}} $0
+\\label{${1:`(or (ignore-errors (current-kill 0)) "")`}} $0

@@ -3,4 +3,4 @@
 # key: ;prime
 # condition: 'auto
 # --
-`(yasnippet/repeat (car kill-ring) "\\prime")`
+`(yasnippet/repeat (or (car kill-ring) "1") "\\prime")`

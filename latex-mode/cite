@@ -3,4 +3,4 @@
 # key: ;cite
 # condition: 'auto
 # --
-\\cite{${1:$$(evil-paste-before 1)}} $0
+\\cite{${1:`(or (ignore-errors (current-kill 0)) "")`}} $0
